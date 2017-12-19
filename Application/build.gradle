@@ -1,11 +1,12 @@
 
 buildscript {
     repositories {
+        google() // new which replace https://maven.google.com
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.0'
     }
 }
 
@@ -37,12 +38,16 @@ android {
     
         compileSdkVersion 26
 
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 22
     }
+    lintOptions {
+        abortOnError false
+    }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
